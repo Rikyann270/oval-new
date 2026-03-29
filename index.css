@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Barlow:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&display=swap');
+
+/* ===================================================
+   OVAL FARM — DESIGN SYSTEM (LIGHT MODE)
+   Inspired by: Harvesting for Seed
+   Light, botanical, editorial, premium
+=================================================== */
+
+:root {
+  /* Palette - Light Mode Focus */
+  --bg:         #fdfaf2;  /* off-white base */
+  --bg-alt:     #f4f0e0;  /* warm cream */
+  --bg-light:   #ffffff;  /* pure white for specific high-contrast cards */
+  --surface:    #ede5cc;  /* parchment / aged paper */
+
+  --brown:      #7a4a3e;  /* mauve brown */
+  --olive:      #5a6e3a;  /* olive green */
+  --mustard:    #a68b3c;  /* golden mustard */
+
+  --text:       #151810;  /* near-black ink */
+  --text-muted: #4a5240;  /* softened ink */
+  --text-dim:   rgba(21,24,16,0.15); /* for ghost numbers */
+
+  --accent:     #8a7228;  /* subtle gold */
+  --accent-red: #c0543e;  /* terracotta */
+
+  --wave-fill:  #f4f0e0;
+
+  /* Type */
+  --font-display: 'Barlow Condensed', sans-serif;
+  --font-body:    'Barlow', sans-serif;
+  --font-serif:   'Playfair Display', serif;
+
+  /* Layout */
+  --page-x: 6%;
+  --max-w: 1200px;
+}
+
+/* ===================================================
+   RESET
+=================================================== */
+*, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+a { text-decoration: none; color: inherit; }
+img { display: block; max-width: 100%; }
+
+/* ===================================================
+   TYPOGRAPHY
+=================================================== */
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  line-height: 1.05;
+}
+
+.body-text {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.85;
+  max-width: 680px;
+}
+
+.overline {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-red);
+}
+
+.ghost-number {
+  position: absolute;
+  font-family: var(--font-display);
+  font-size: clamp(12rem, 25vw, 22rem);
+  font-weight: 800;
+  color: var(--text-dim);
+  letter-spacing: -0.04em;
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+}
+
+/* ===================================================
+   LAYOUT
+=================================================== */
+.container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--page-x);
+}
+
+.section { padding: 8rem 0; }
+.section--tight { padding: 5rem 0; }
+
+/* ===================================================
+   DIVIDER RULE
+=================================================== */
+.rule {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1.25rem 0 2.5rem;
+}
+.rule::before {
+  content: '';
+  display: inline-block;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--accent-red);
+  flex-shrink: 0;
+}
+.rule::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(21,24,16,0.1);
+}
+
+/* ===================================================
+   BUTTONS
+=================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 1rem 2.4rem;
+  border-radius: 3px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-solid {
+  background-color: var(--accent-red);
+  color: #fff;
+}
+.btn-solid:hover { background-color: #a34330; transform: translateY(-2px); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--text);
+  border: 1.5px solid rgba(21,24,16,0.3);
+}
+.btn-outline:hover {
+  background-color: var(--text);
+  color: var(--bg);
+  border-color: var(--text);
+}
+
+/* ===================================================
+   SCROLLBAR
+=================================================== */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--surface); border-radius: 3px; }

@@ -1,0 +1,110 @@
+.about__block {
+  position: relative;
+  background-color: var(--bg);
+  overflow: hidden;
+  padding: 7rem 0 4rem;
+}
+
+.about__block--alt {
+  background-color: var(--surface); /* parchment background for alternating blocks */
+}
+
+/* Giant ghost chapter number - ink on off-white */
+.about__ghost {
+  right: 4%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 0;
+  color: rgba(21, 24, 16, 0.05);
+}
+
+.about__block--alt .about__ghost {
+  right: auto;
+  left: 4%;
+}
+
+/* Botanical illustration - ink strokes */
+.about__botanical {
+  width: 100%;
+  max-width: 340px;
+  margin: 0 auto 1rem;
+  display: block;
+}
+
+.about__botanical svg { 
+  width: 100%; 
+  height: auto; 
+}
+
+/* Two-column content */
+.about__content {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.about__block--alt .about__content {
+  direction: rtl;
+}
+
+.about__block--alt .about__content > * {
+  direction: ltr;
+}
+
+/* Text side */
+.about__title {
+  margin-bottom: 1.5rem;
+  color: var(--text);
+}
+
+.about__text .body-text {
+  margin-top: 0;
+  color: var(--text-muted);
+}
+
+/* Image */
+.about__img-wrap {
+  border-radius: 6px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  box-shadow: 0 10px 30px rgba(21, 24, 16, 0.05);
+}
+
+.about__img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s ease;
+}
+
+.about__img-wrap:hover img { transform: scale(1.05); }
+
+/* Wave between sections - matching background transitions */
+.about__wave {
+  width: 100%;
+  line-height: 0;
+  margin-top: 4rem;
+}
+
+.about__wave svg { display: block; width: 100%; height: 60px; }
+
+/* CTA row at end */
+.about__cta {
+  background-color: var(--bg);
+  padding: 5rem var(--page-x);
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .about__content,
+  .about__block--alt .about__content {
+    grid-template-columns: 1fr;
+    direction: ltr;
+  }
+
+  .about__ghost { font-size: 10rem; opacity: 0.04; }
+  .about__img-wrap { aspect-ratio: 16/9; }
+}
