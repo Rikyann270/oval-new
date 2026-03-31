@@ -7,6 +7,7 @@ import './ProductsPage.css';
 const products = [
   {
     id: 'chicks',
+    path: '/products/chicks',
     icon: <Bird size={28} />,
     category: 'Day-old Chicks',
     title: 'Bred for Peak Performance',
@@ -21,6 +22,7 @@ const products = [
   },
   {
     id: 'feeds',
+    path: '/products/feeds',
     icon: <Package size={28} />,
     category: 'Poultry Feeds',
     title: 'Nutritious Formulations',
@@ -35,6 +37,7 @@ const products = [
   },
   {
     id: 'equipment',
+    path: '/products/equipment',
     icon: <Wrench size={28} />,
     category: 'Farm Equipment',
     title: 'Standard Essentials',
@@ -118,9 +121,14 @@ const ProductsPage = () => {
               ))}
             </ul>
 
-            <Link to={`/checkout?product=${p.id}`} className="btn btn-solid">
-              {p.cta} <ArrowRight size={16} />
-            </Link>
+            <div className="product-section__actions" style={{ display: 'flex', gap: '1rem', marginTop: '1rem' }}>
+              <Link to={p.path} className="btn btn-outline">
+                View Details
+              </Link>
+              <Link to={`/checkout?product=${p.id}`} className="btn btn-solid">
+                {p.cta} <ArrowRight size={16} />
+              </Link>
+            </div>
           </motion.div>
         </section>
       ))}

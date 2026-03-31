@@ -1,0 +1,315 @@
+/* ─── BASE ─────────────────────────────────────── */
+.chicks-page { background: var(--bg); }
+
+/* ─── HERO ─────────────────────────────────────── */
+.chicks-hero {
+  min-height: 78vh;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  padding-bottom: 7rem;
+}
+.chicks-hero__bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1612170153139-6f881ff067e0?auto=format&fit=crop&w=1800&q=80');
+  background-size: cover;
+  background-position: center 40%;
+  z-index: 0;
+}
+.chicks-hero__bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, rgba(253,250,242,0.97) 38%, rgba(253,250,242,0.45) 68%, rgba(253,250,242,0) 100%);
+}
+.chicks-hero__content {
+  position: relative;
+  z-index: 2;
+  padding-top: 11rem;
+  max-width: 620px;
+}
+.chicks-hero__title em { font-style: italic; color: var(--accent-red); }
+.chicks-hero__sub { margin-top: 1.2rem; max-width: 490px; }
+.chicks-hero__actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2.5rem; }
+
+/* ─── STATS STRIP ─────────────────────────────── */
+.chicks-stats {
+  background: var(--text);
+  padding: 2.5rem 0;
+}
+.chicks-stats__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(253,250,242,0.08);
+}
+.stat-pill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 2rem 1rem;
+  background: var(--text);
+}
+.stat-pill__value {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 800;
+  color: var(--accent-red);
+  letter-spacing: 0.02em;
+}
+.stat-pill__label {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(253,250,242,0.55);
+}
+
+/* ─── SECTION HEADER ──────────────────────────── */
+.section-header {
+  max-width: 600px;
+  margin-bottom: 4rem;
+}
+
+/* ─── BREEDS ALTERNATING ──────────────────────── */
+.chicks-breeds { background: var(--bg); }
+
+.breeds-list { display: flex; flex-direction: column; gap: 6rem; }
+
+.breed-detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+.breed-detail--alt { direction: rtl; }
+.breed-detail--alt > * { direction: ltr; }
+
+.breed-detail__img-wrap {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  height: 480px;
+}
+.breed-detail__img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s ease;
+}
+.breed-detail:hover .breed-detail__img-wrap img { transform: scale(1.04); }
+.breed-detail__tag {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.9rem;
+  border-radius: 2px;
+}
+
+.breed-detail__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ─── SPEC TABLE ──────────────────────────────── */
+.spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.spec-table td {
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  border-bottom: 1px solid rgba(21,24,16,0.06);
+}
+.spec-table tr:last-child td { border-bottom: none; }
+.spec-table__key {
+  font-weight: 600;
+  color: var(--text);
+  width: 45%;
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.spec-table__val { color: var(--text-muted); }
+
+.breed-tip {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  background: var(--bg-alt);
+  border-radius: 4px;
+  padding: 1rem 1.2rem;
+  border-left: 3px solid var(--accent-red);
+}
+.breed-tip p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; }
+
+/* ─── BROODING GUIDE ──────────────────────────── */
+.chicks-brooding {
+  background: var(--surface);
+  padding: 8rem 0;
+}
+.brooding-tips {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+.btip {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  background: var(--bg);
+  border-radius: 6px;
+  padding: 1.5rem;
+  border: 1px solid rgba(21,24,16,0.06);
+}
+.btip p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.75; }
+
+/* ─── DATA TABLE ──────────────────────────────── */
+.table-wrap { overflow-x: auto; margin-top: 2.5rem; border-radius: 6px; border: 1px solid rgba(21,24,16,0.08); }
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  min-width: 600px;
+}
+.data-table thead { background: var(--text); }
+.data-table thead th {
+  color: rgba(253,250,242,0.85);
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 1rem 1.2rem;
+  text-align: left;
+}
+.data-table tbody tr { border-bottom: 1px solid rgba(21,24,16,0.06); }
+.data-table tbody tr:last-child { border-bottom: none; }
+.data-table tbody tr:nth-child(even) { background: var(--bg-alt); }
+.data-table tbody td { padding: 0.9rem 1.2rem; color: var(--text-muted); vertical-align: top; }
+.data-table tbody td strong { color: var(--text); }
+
+/* ─── VACCINATION ─────────────────────────────── */
+.chicks-vaccination { background: var(--bg); }
+
+/* ─── HEALTH SIGNS ────────────────────────────── */
+.chicks-health {
+  background: var(--bg-alt);
+  padding: 8rem 0;
+}
+.health-signs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+.health-sign {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1.25rem 1.5rem;
+  border-radius: 6px;
+  border-left: 4px solid transparent;
+}
+.health-sign--ok { background: rgba(90,110,58,0.08); border-color: var(--olive); color: var(--olive); }
+.health-sign--warning { background: rgba(166,139,60,0.08); border-color: var(--mustard); color: var(--mustard); }
+.health-sign--alert { background: rgba(192,84,62,0.1); border-color: var(--accent-red); color: var(--accent-red); }
+.health-sign strong { display: block; font-size: 0.9rem; font-weight: 700; color: var(--text); margin-bottom: 0.3rem; }
+.health-sign p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; margin: 0; }
+
+/* ─── TESTIMONIALS ────────────────────────────── */
+.chicks-testimonials { background: var(--bg); }
+.testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.testi-card {
+  background: var(--surface);
+  border-radius: 6px;
+  padding: 2.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border: 1px solid rgba(21,24,16,0.06);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.testi-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(21,24,16,0.1); }
+.testi-stars { display: flex; gap: 0.2rem; }
+.testi-text { font-size: 0.95rem; color: var(--text-muted); line-height: 1.85; font-style: italic; flex: 1; }
+.testi-author strong { display: block; font-family: var(--font-display); font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text); }
+.testi-author span { font-size: 0.82rem; color: var(--text-muted); }
+
+/* ─── FAQ ─────────────────────────────────────── */
+.chicks-faq {
+  background: var(--surface);
+  padding: 8rem 0;
+}
+.chicks-faq__inner { display: grid; grid-template-columns: 1fr 1.5fr; gap: 6rem; align-items: start; }
+.faq-list { display: flex; flex-direction: column; gap: 0; border: 1px solid rgba(21,24,16,0.08); border-radius: 6px; overflow: hidden; }
+.faq-item { border-bottom: 1px solid rgba(21,24,16,0.08); }
+.faq-item:last-child { border-bottom: none; }
+.faq-question {
+  width: 100%;
+  background: var(--bg);
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.3rem 1.5rem;
+  text-align: left;
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text);
+  transition: background 0.2s;
+}
+.faq-question:hover { background: var(--bg-alt); }
+.faq-item.open .faq-question { background: var(--bg-alt); color: var(--accent-red); }
+.faq-chevron { flex-shrink: 0; transition: transform 0.3s; }
+.faq-item.open .faq-chevron { transform: rotate(180deg); }
+.faq-answer { overflow: hidden; background: var(--bg); }
+.faq-answer p { padding: 0 1.5rem 1.3rem; font-size: 0.92rem; color: var(--text-muted); line-height: 1.85; }
+
+/* ─── BOTTOM CTA ──────────────────────────────── */
+.chicks-cta { background: var(--text); padding: 8rem 0; }
+.chicks-cta__inner { display: flex; flex-direction: column; gap: 1.5rem; max-width: 700px; }
+.chicks-cta .overline { color: var(--mustard); }
+.chicks-cta .section-title { color: var(--bg); }
+.chicks-cta .body-text { color: rgba(253,250,242,0.65); }
+.chicks-cta__buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+/* ─── RESPONSIVE ──────────────────────────────── */
+@media (max-width: 1050px) {
+  .breed-detail, .breed-detail--alt { grid-template-columns: 1fr; direction: ltr; gap: 2.5rem; }
+  .breed-detail__img-wrap { height: 340px; }
+  .chicks-faq__inner { grid-template-columns: 1fr; }
+}
+@media (max-width: 900px) {
+  .chicks-stats__grid { grid-template-columns: repeat(2, 1fr); }
+  .testimonials-grid { grid-template-columns: 1fr 1fr; }
+  .health-signs { grid-template-columns: 1fr; }
+  .brooding-tips { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .chicks-stats__grid { grid-template-columns: repeat(2, 1fr); }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .chicks-hero__content { max-width: 100%; }
+}

@@ -1,0 +1,416 @@
+/* ═══════════════════════════════════════════════
+   GUIDE PAGE — SHARED STYLES
+   Used by: VaccinationGuidePage, BiosecurityPage,
+   BroodingGuidePage, HealthManagementPage, RecordKeepingPage
+═══════════════════════════════════════════════ */
+
+.guide-page { background: var(--bg); }
+
+/* ─── HERO ──────────────────────────────────── */
+.guide-hero {
+  min-height: 68vh;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  padding-bottom: 6rem;
+}
+.guide-hero__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+.guide-hero__bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, rgba(253,250,242,0.97) 40%, rgba(253,250,242,0.5) 70%, rgba(253,250,242,0.1) 100%);
+}
+.guide-hero__content {
+  position: relative;
+  z-index: 2;
+  padding-top: 10rem;
+  max-width: 640px;
+}
+.guide-hero__content .section-title em { font-style: italic; color: var(--accent-red); }
+.guide-hero__content .body-text { margin-top: 1.2rem; max-width: 500px; }
+.guide-hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+.guide-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: var(--surface);
+  border: 1px solid rgba(21,24,16,0.1);
+  padding: 0.45rem 1rem;
+  border-radius: 2px;
+}
+
+/* ─── ALERT BANNER ──────────────────────────── */
+.guide-alert-banner {
+  background: #fff8e6;
+  border-top: 3px solid var(--mustard);
+  border-bottom: 1px solid rgba(166,139,60,0.2);
+  padding: 1.2rem 0;
+}
+.guide-alert-banner__inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  color: var(--text);
+}
+.guide-alert-banner__inner svg { color: var(--mustard); flex-shrink: 0; margin-top: 0.1rem; }
+.guide-alert-banner__inner p { font-size: 0.9rem; line-height: 1.7; color: var(--text-muted); }
+.guide-alert-banner__inner strong { color: var(--text); }
+
+/* ─── SECTION HEADER ─────────────────────────── */
+.section-header { max-width: 600px; margin-bottom: 4rem; }
+
+/* ─── GUIDE SECTIONS ─────────────────────────── */
+.guide-section { background: var(--bg); padding: 8rem 0; }
+.guide-section--alt { background: var(--surface); }
+.guide-notes { background: var(--text); padding: 8rem 0; }
+.guide-notes .section-header .section-title { color: var(--bg); }
+.guide-notes .section-header .body-text { color: rgba(253,250,242,0.65); }
+.guide-notes .overline { color: var(--mustard); }
+.guide-notes .rule::before { background: var(--mustard); }
+.guide-notes .rule::after { background: rgba(253,250,242,0.15); }
+
+/* ─── NOTES GRID ─────────────────────────────── */
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+.note-card {
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start;
+  background: rgba(253,250,242,0.06);
+  border: 1px solid rgba(253,250,242,0.1);
+  border-radius: 6px;
+  padding: 1.75rem;
+}
+.note-num {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--accent-red);
+  opacity: 0.6;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.note-card p { font-size: 0.9rem; color: rgba(253,250,242,0.7); line-height: 1.8; }
+
+/* ─── DATA TABLE (shared with ChicksPage) ────── */
+.table-wrap { overflow-x: auto; margin-top: 2.5rem; border-radius: 6px; border: 1px solid rgba(21,24,16,0.08); }
+.data-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; min-width: 640px; }
+.data-table thead { background: var(--text); }
+.data-table thead th {
+  color: rgba(253,250,242,0.85);
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 1rem 1.2rem;
+  text-align: left;
+}
+.data-table tbody tr { border-bottom: 1px solid rgba(21,24,16,0.06); }
+.data-table tbody tr:last-child { border-bottom: none; }
+.data-table tbody tr:nth-child(even) { background: var(--bg-alt); }
+.data-table tbody td { padding: 0.9rem 1.2rem; color: var(--text-muted); vertical-align: top; }
+.data-table tbody td strong { color: var(--text); }
+.guide-section--alt .data-table tbody tr:nth-child(even) { background: rgba(21,24,16,0.04); }
+.guide-section--alt .data-table tbody tr:nth-child(odd) { background: var(--surface); }
+
+/* ─── DISEASE CARDS ──────────────────────────── */
+.disease-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8rem;
+}
+.disease-card {
+  background: var(--bg-light);
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(21,24,16,0.07);
+  border-top: 4px solid transparent;
+}
+.disease-card--critical { border-top-color: var(--accent-red); }
+.disease-card--high { border-top-color: var(--mustard); }
+.disease-card--moderate { border-top-color: var(--olive); }
+
+.disease-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 1.5rem 0.75rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.disease-card__header h4 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text);
+}
+.severity-badge {
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.7rem;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+.severity-badge--critical { background: rgba(192,84,62,0.12); color: var(--accent-red); }
+.severity-badge--high { background: rgba(166,139,60,0.12); color: var(--mustard); }
+.severity-badge--moderate { background: rgba(90,110,58,0.12); color: var(--olive); }
+
+.disease-card__body { padding: 0.75rem 1.5rem 1.5rem; }
+.disease-card__body ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.2rem;
+}
+.disease-card__body ul li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.84rem;
+  color: var(--text-muted);
+}
+.disease-card__body ul li svg { color: var(--olive); flex-shrink: 0; }
+.disease-label {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.4rem;
+  margin-top: 0.8rem;
+}
+.disease-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  border-top: 1px solid rgba(21,24,16,0.07);
+  padding-top: 1rem;
+}
+.disease-row p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.7; }
+
+/* ─── FAQ ────────────────────────────────────── */
+.guide-faq { background: var(--bg-alt); padding: 8rem 0; }
+.guide-2col { display: grid; grid-template-columns: 1fr 1.6fr; gap: 6rem; align-items: start; }
+.faq-list { display: flex; flex-direction: column; border: 1px solid rgba(21,24,16,0.08); border-radius: 6px; overflow: hidden; }
+.faq-item { border-bottom: 1px solid rgba(21,24,16,0.08); }
+.faq-item:last-child { border-bottom: none; }
+.faq-question {
+  width: 100%;
+  background: var(--bg);
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.3rem 1.5rem;
+  text-align: left;
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text);
+  transition: background 0.2s;
+  line-height: 1.4;
+}
+.faq-question:hover { background: var(--bg-alt); }
+.faq-item.open .faq-question { background: var(--bg-alt); color: var(--accent-red); }
+.faq-chevron { flex-shrink: 0; transition: transform 0.3s; }
+.faq-item.open .faq-chevron { transform: rotate(180deg); }
+.faq-answer { overflow: hidden; background: var(--bg); }
+.faq-answer p { padding: 0 1.5rem 1.3rem; font-size: 0.92rem; color: var(--text-muted); line-height: 1.85; }
+
+/* ─── RELATED GUIDES ─────────────────────────── */
+.guide-related { background: var(--surface); padding: 7rem 0; }
+.related-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+.related-card {
+  background: var(--bg);
+  border-radius: 6px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  border: 1px solid rgba(21,24,16,0.07);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.related-card:hover { transform: translateY(-4px); box-shadow: 0 14px 40px rgba(21,24,16,0.1); }
+.related-card h4 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text);
+}
+.related-card p { font-size: 0.87rem; color: var(--text-muted); line-height: 1.75; flex: 1; }
+.related-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-red);
+  transition: gap 0.2s;
+}
+.related-link:hover { gap: 0.7rem; }
+
+/* ─── GUIDE CTA ──────────────────────────────── */
+.guide-cta { background: var(--text); padding: 8rem 0; }
+.guide-cta__inner { display: flex; flex-direction: column; gap: 1.5rem; max-width: 700px; }
+.guide-cta .overline { color: var(--mustard); }
+.guide-cta .section-title { color: var(--bg); }
+.guide-cta .body-text { color: rgba(253,250,242,0.65); }
+.guide-cta__buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-outline-light {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 1rem 2.4rem;
+  border-radius: 3px;
+  cursor: pointer;
+  border: 1.5px solid rgba(253,250,242,0.3);
+  background: transparent;
+  color: #fff;
+  transition: all 0.3s;
+}
+.btn-outline-light:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
+
+/* ─── BIOSECURITY / HEALTH SPECIFIC ─────────── */
+.guide-steps { display: flex; flex-direction: column; gap: 0; counter-reset: step-counter; }
+.guide-step {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 2rem;
+  padding: 3rem 0;
+  border-bottom: 1px solid rgba(21,24,16,0.07);
+  counter-increment: step-counter;
+  align-items: start;
+}
+.guide-step:last-child { border-bottom: none; }
+.guide-step__num {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--text-dim);
+  line-height: 1;
+  user-select: none;
+}
+.guide-step__content h4 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+}
+.guide-step__content p { font-size: 0.93rem; color: var(--text-muted); line-height: 1.85; max-width: 680px; }
+.guide-step__content ul {
+  list-style: none;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.guide-step__content ul li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+.guide-step__content ul li svg { color: var(--olive); flex-shrink: 0; margin-top: 0.2rem; }
+
+/* ─── INFO BOXES ─────────────────────────────── */
+.info-boxes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+.info-box {
+  background: var(--bg-light);
+  border-radius: 6px;
+  padding: 2rem;
+  border: 1px solid rgba(21,24,16,0.07);
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  transition: box-shadow 0.3s;
+}
+.info-box:hover { box-shadow: 0 12px 40px rgba(21,24,16,0.1); }
+.info-box__icon {
+  width: 50px; height: 50px;
+  border-radius: 50%;
+  background: var(--surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.info-box h4 {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text);
+}
+.info-box p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.8; }
+
+/* ─── RECORD TABLE ──────────────────────────── */
+.record-template-wrap { background: var(--surface); border-radius: 8px; padding: 2rem; margin-top: 2.5rem; border: 1px solid rgba(21,24,16,0.08); }
+.record-template-wrap h4 { font-family: var(--font-display); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem; }
+
+/* ─── RESPONSIVE ─────────────────────────────── */
+@media (max-width: 1100px) {
+  .disease-grid { grid-template-columns: repeat(2, 1fr); }
+  .related-grid { grid-template-columns: repeat(2, 1fr); }
+  .guide-2col { grid-template-columns: 1fr; }
+}
+@media (max-width: 900px) {
+  .notes-grid { grid-template-columns: 1fr; }
+  .disease-grid { grid-template-columns: 1fr; }
+  .disease-row { grid-template-columns: 1fr; }
+  .info-boxes { grid-template-columns: 1fr; }
+  .guide-step { grid-template-columns: 50px 1fr; gap: 1.2rem; }
+  .guide-step__num { font-size: 2.5rem; }
+}
+@media (max-width: 640px) {
+  .related-grid { grid-template-columns: 1fr; }
+  .guide-hero__content { max-width: 100%; }
+}

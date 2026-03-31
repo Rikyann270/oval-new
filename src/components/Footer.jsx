@@ -14,9 +14,18 @@ const Footer = () => (
 
       <div className="footer__col">
         <h4>Products</h4>
-        <Link to="/products">Premium Chicks</Link>
-        <Link to="/products">Nutritious Feeds</Link>
-        <Link to="/products">Farm Equipment</Link>
+        <Link to="/products/chicks">Day-Old Chicks</Link>
+        <Link to="/products/feeds">Nutritious Feeds</Link>
+        <Link to="/products/equipment">Farm Equipment</Link>
+        <Link to="/products">Full Catalog</Link>
+      </div>
+
+      <div className="footer__col">
+        <h4>Learning Hub</h4>
+        <Link to="/learn/vaccination">Vaccination Guide</Link>
+        <Link to="/learn/biosecurity">Biosecurity & Hygiene</Link>
+        <Link to="/learn/brooding">Brooding Management</Link>
+        <Link to="/learn/health">Health Management</Link>
       </div>
 
       <div className="footer__col">
@@ -24,13 +33,7 @@ const Footer = () => (
         <Link to="/">Home</Link>
         <Link to="/#story">Our Story</Link>
         <Link to="/checkout">Book / Order</Link>
-      </div>
-
-      <div className="footer__col">
-        <h4>Partnerships</h4>
-        <p>Retail</p>
-        <p>Wholesale</p>
-        <p>Inquiries</p>
+        <Link to="/contact">Contact Support</Link>
       </div>
     </div>
 
